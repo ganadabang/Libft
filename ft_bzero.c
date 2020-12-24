@@ -6,7 +6,7 @@
 /*   By: SSONG <SSONG@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/23 10:18:35 by hyeonsok          #+#    #+#             */
-/*   Updated: 2020/12/24 17:20:30 by hyeonsok         ###   ########.fr       */
+/*   Updated: 2020/12/24 21:08:48 by SSONG            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,6 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	unsigned char *cast;
-
-	cast = s;
-	while (n)
-	{
-		*cast++ = 0;
-		n--;
-	}
+	while (n--)
+		*(unsigned char *)s++ = 0;
 }

@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: SSONG <SSONG@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/22 20:21:36 by hyeonsok          #+#    #+#             */
-/*   Updated: 2020/12/24 21:24:38 by SSONG            ###   ########.fr       */
+/*   Created: 2020/12/24 21:09:45 by SSONG             #+#    #+#             */
+/*   Updated: 2020/12/24 21:30:08 by hyeonsok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+int		memcmp(const void *s1, const void *s2, size_t n)
 {
-	while (len--)
-		*(unsigned char *)b++ = (unsigned char)c;
-	return (b);
+	while (n--)
+	{
+		if (*(unsigned char *)s1++ != *(unsigned char *)s2++)
+			return (*(unsigned char *)--s1 - *(unsigned char *)--s2);
+	}
+	return (0);
 }
