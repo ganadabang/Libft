@@ -6,25 +6,23 @@
 /*   By: SSONG <SSONG@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/25 14:00:47 by SSONG             #+#    #+#             */
-/*   Updated: 2020/12/25 14:43:19 by SSONG            ###   ########.fr       */
+/*   Updated: 2020/12/26 16:45:33 by hyeonsok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-
-
-
-char	*strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	const char* chr;
+	size_t len;
 
-    chr = s;
-	while (*s && c)
+	len = ft_strlen(s);
+	s += len++;
+	while (len--)
 	{
 		if (*s == (char)c)
-			chr = s;
-        s++;
+			return ((char *)s);
+        s--;
 	}
-	return ((char *)chr);
+	return (0);
 }

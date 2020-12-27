@@ -6,15 +6,15 @@
 /*   By: SSONG <SSONG@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/25 17:35:14 by SSONG             #+#    #+#             */
-/*   Updated: 2020/12/25 17:35:46 by SSONG            ###   ########.fr       */
+/*   Updated: 2020/12/26 13:45:25 by hyeonsok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_lower(int c)
+int		ft_tolower(int c)
 {
-	if (c >= 'A' && c < 'Z')
-		c += 'A' - 'a'; 
+	if (c >= 'A' && c <='Z')
+		c -= 'A' - 'a'; 
 	return (c);
 }

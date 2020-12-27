@@ -6,13 +6,13 @@
 /*   By: SSONG <SSONG@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/24 21:09:45 by SSONG             #+#    #+#             */
-/*   Updated: 2020/12/24 21:30:08 by hyeonsok         ###   ########.fr       */
+/*   Updated: 2020/12/26 13:00:27 by hyeonsok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		memcmp(const void *s1, const void *s2, size_t n)
+int		ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	while (n--)
 	{

@@ -6,7 +6,7 @@
 /*   By: SSONG <SSONG@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/24 17:54:15 by SSONG             #+#    #+#             */
-/*   Updated: 2020/12/24 21:31:59 by hyeonsok         ###   ########.fr       */
+/*   Updated: 2020/12/26 15:51:03 by hyeonsok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,22 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t n)
 {
-	unsigned char	*cast_dst;
-	const void		*cast_src;
+	void *first_dst;
 
-	cast_dst = dst;
-	cast_src = src;
-	while (n)
+	first_dst = dst;
+	if (dst == src)
+		return (first_dst);
+	if (dst < src)
 	{
-		if (dst >= src)
-		{
-			while (n--)
-				*cast_dst++ = *(unsigned char *)cast_src++;
-		}
-		else
-		{
-			cast_dst += n;
-			cast_src += n;
-			while (n--)
-				*--cast_dst = *(unsigned char *)--cast_src;
-		}
+		while (n--)
+			*(unsigned char *)dst++ = *(unsigned char *)src++;
 	}
-	return (dst);
+	else
+	{
+		dst += n - 1;
+		src += n - 1;
+		while (n--)
+			*(unsigned char *)dst-- = *(unsigned char *)src--;
+	}
+	return (first_dst);
 }
