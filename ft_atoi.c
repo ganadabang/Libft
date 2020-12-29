@@ -6,7 +6,7 @@
 /*   By: SSONG <SSONG@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/25 16:16:40 by SSONG             #+#    #+#             */
-/*   Updated: 2020/12/26 23:09:04 by hyeonsok         ###   ########.fr       */
+/*   Updated: 2020/12/29 03:29:02 by hyeonsok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int		ft_atoi(const char *str)
 {
-	unsigned long long	val;
-	int					sign;
+	size_t	val;
+	int		sign;
 
 	val = 0;
 	sign = 1;
