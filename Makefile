@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hyeonsok <hyeonsok@student.42seoul.kr>     +#+  +:+       +#+         #
+#    By: hyeonsok <hyeonsok@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/26 11:13:05 by hyeonsok          #+#    #+#              #
-#    Updated: 2020/12/26 12:20:33 by hyeonsok         ###   ########.fr        #
+#    Updated: 2021/01/02 16:02:05 by hyeonsok         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,13 @@ SRCS =	ft_memset.c\
 		ft_toupper.c\
 		ft_tolower.c\
 		ft_calloc.c\
-		ft_strdup.c 
+		ft_strdup.c\
+		ft_substr.c\
+		ft_strtrim.c\
+		ft_strjoin.c\
+		ft_split.c\
+		ft_itoa.c
+
 OBJS = $(SRCS:.c=.o)
 
 all : $(TARGET)
@@ -55,6 +61,6 @@ clean :
 	rm -rf $(OBJS)
 
 fclean :
-	rm -rf $(NAME)
+	rm -rf $(NAME) $(OBJS)
 
 re : fclean all	

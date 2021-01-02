@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: SSONG <SSONG@student.42.fr>                +#+  +:+       +#+        */
+/*   By: hyeonsok <hyeonsok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/22 20:51:02 by hyeonsok          #+#    #+#             */
-/*   Updated: 2020/12/26 20:37:03 by hyeonsok         ###   ########.fr       */
+/*   Updated: 2021/01/02 16:01:30 by hyeonsok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,10 @@ int			ft_toupper(int c);
 int			ft_tolower(int c);
 void		*ft_calloc(size_t count, size_t size);
 char		*ft_strdup(const char *s1);
-
+char        *ft_substr(char const *s, unsigned int start, size_t len);
+char 		*ft_strtrim(char const *s1, char const *set);
+char        *ft_strjoin(char const *s1, char const *s2);
+char		**ft_split(char const *s, char c);
+char		*ft_itoa(int n);
 
 #endif
