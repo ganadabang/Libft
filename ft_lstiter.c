@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyeonsok <hyeonsok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/02 21:37:15 by hyeonsok          #+#    #+#             */
-/*   Updated: 2021/01/03 01:20:32 by hyeonsok         ###   ########.fr       */
+/*   Created: 2021/01/03 04:36:59 by hyeonsok          #+#    #+#             */
+/*   Updated: 2021/01/03 04:39:52 by hyeonsok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl_fd(char *s, int fd)
+void ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	if (s == NULL || fd < 0)
+	if (lst == NULL || f == NULL)
 		return;
-	ft_putstr_fd(s, fd);	
-	ft_putchar_fd('\n', fd);
+	while (lst != NULL)
+	{
+		f(lst->content);
+		lst = lst->next;
+	}
 }

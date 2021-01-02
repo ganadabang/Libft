@@ -6,9 +6,11 @@
 #    By: hyeonsok <hyeonsok@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/26 11:13:05 by hyeonsok          #+#    #+#              #
-#    Updated: 2021/01/02 23:39:58 by hyeonsok         ###   ########.fr        #
+#    Updated: 2021/01/03 04:31:26 by hyeonsok         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+.PHONY : all bonus clean fclean re 
 
 NAME = libft.a
 
@@ -52,20 +54,34 @@ SRCS =	ft_memset.c\
 		ft_putendl_fd.c\
 		ft_putnbr_fd.c
 
+BRCS =	ft_lstnew.c\
+		ft_lstadd_front.c\
+		ft_lstsize.c\
+		*ft_lstlast.c\
+		ft_lstadd_back.c\
+		ft_lstdelone.c\
+		ft_lstclear.c\
+		ft_lstiter.c\
+		*ft_lstmap.c
+
 OBJS = $(SRCS:.c=.o)
+BBJS = $(BRCS:.c=.o)
 
 all : $(TARGET)
 
 $(TARGET) : $(OBJS)
-	ar -rc $@ $^
+	ar -rcs $@ $^
+
+bonus : $(OBJS) $(BBJS)
+	ar -rcs $(NAME) $^
 
 .c.o :
 	$(CC) $(CFLAGS) -c -o $@ $< 
 
 clean :
-	rm -rf $(OBJS)
+	rm -rf $(OBJS) $(BBJS)
 
-fclean :
-	rm -rf $(NAME) $(OBJS)
+fclean : clean
+	rm -rf $(NAME)
 
-re : fclean all	
+re : fclean all
