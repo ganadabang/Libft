@@ -6,7 +6,7 @@
 /*   By: hyeonsok <hyeonsok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/29 19:03:38 by hyeonsok          #+#    #+#             */
-/*   Updated: 2020/12/30 18:27:37 by hyeonsok         ###   ########.fr       */
+/*   Updated: 2020/12/30 20:27:38 by hyeonsok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char 			*ft_strtrim(char const *s1, char const *set)
 		s1++;
 	idx = ft_strlen(s1);
 	s1 += idx - 1;
-	while (idx != 0 && *s1 != '\0' && ft_strchr(set, *s1) != NULL)		//이게 지금 애매한 것 같다 ..  idx = 1일 때 어떻게 작동하는가 ? 
+	while (idx != 0 && ft_strchr(set, *s1) != NULL)		//이게 지금 애매한 것 같다 ..  idx = 1일 때 어떻게 작동하는가 ? 
 	{
 		s1--;
 		idx--;

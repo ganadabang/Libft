@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyeonsok <hyeonsok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/29 17:30:56 by hyeonsok          #+#    #+#             */
-/*   Updated: 2020/12/31 06:00:04 by hyeonsok         ###   ########.fr       */
+/*   Created: 2021/01/02 20:44:55 by hyeonsok          #+#    #+#             */
+/*   Updated: 2021/01/02 21:06:43 by hyeonsok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char	*sub;
+	char			*new;
+	unsigned int	idx;
+	size_t			len;
 	
-    if (!s || !(sub = ft_calloc(len + 1, sizeof(char))))
-		return (0);
-	if (!*s || start >= ft_strlen(s))
-		return(sub);
-	s += start;
-	ft_strlcat(sub, s, len + 1);
-	return (sub);
+	if (s == NULL || f == NULL)
+		return (NULL);
+	len = ft_strlen(s);
+	if(!(new = ft_calloc(len + 1,sizeof(char))))
+		return (NULL);
+	idx = 0;
+	while (idx < len)
+	{
+		new[idx] = f(idx, s[idx]);
+		idx++;
+	}
+	return (new);
 }

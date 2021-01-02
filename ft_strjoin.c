@@ -6,7 +6,7 @@
 /*   By: hyeonsok <hyeonsok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/29 18:22:07 by hyeonsok          #+#    #+#             */
-/*   Updated: 2020/12/29 23:37:10 by hyeonsok         ###   ########.fr       */
+/*   Updated: 2020/12/30 20:45:56 by hyeonsok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,13 @@ char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*str;
 	size_t	strsize;
-	if (!s1 || !s2)
-	{
-		if (!s1 && !s2)
-			return(0);
-		if (s1 == NULL)
-			return(ft_strdup(s2));
-		if (s2 == NULL)
-			return(ft_strdup(s1));
-	}
+
+	if (!s1 && !s2)
+		return(0);
+	if (s1 == NULL)
+		return(ft_strdup(s2));
+	if (s2 == NULL)
+		return(ft_strdup(s1));
 	strsize = ft_strlen(s1) + ft_strlen(s2) + 1;
 	if (!(str = ft_calloc(strsize, sizeof(char))))
 		return (0);

@@ -1,27 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyeonsok <hyeonsok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/29 17:30:56 by hyeonsok          #+#    #+#             */
-/*   Updated: 2020/12/31 06:00:04 by hyeonsok         ###   ########.fr       */
+/*   Created: 2021/01/02 23:16:29 by hyeonsok          #+#    #+#             */
+/*   Updated: 2021/01/03 00:04:06 by hyeonsok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+static void		put_abs_fd(unsigned int abs, int fd)
 {
-	char	*sub;
-	
-    if (!s || !(sub = ft_calloc(len + 1, sizeof(char))))
-		return (0);
-	if (!*s || start >= ft_strlen(s))
-		return(sub);
-	s += start;
-	ft_strlcat(sub, s, len + 1);
-	return (sub);
+	if (fd < 0)
+		return;
+	if (abs > 9)
+		put_abs_fd(abs / 10, fd);
+	ft_putchar_fd(abs % 10 + '0', fd);
+}
+void	ft_putnbr_fd(int n, int fd)
+{
+	unsigned int	abs;
+
+	if (fd < 0)
+		return;
+	abs = n;
+	if (n < 0)
+	{
+		abs = -1 * n;
+		ft_putchar_fd('-', fd);
+	}
+	put_abs_fd(abs, fd);
 }
