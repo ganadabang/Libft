@@ -6,12 +6,11 @@
 /*   By: hyeonsok <hyeonsok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/29 17:30:56 by hyeonsok          #+#    #+#             */
-/*   Updated: 2021/01/03 20:41:03 by hyeonsok         ###   ########.fr       */
+/*   Updated: 2021/01/04 03:17:41 by hyeonsok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {

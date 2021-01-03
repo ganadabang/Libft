@@ -6,13 +6,11 @@
 /*   By: hyeonsok <hyeonsok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/24 23:17:19 by SSONG             #+#    #+#             */
-/*   Updated: 2021/01/03 20:46:03 by hyeonsok         ###   ########.fr       */
+/*   Updated: 2021/01/04 03:18:05 by hyeonsok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
 
 size_t		ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
