@@ -6,13 +6,13 @@
 /*   By: hyeonsok <hyeonsok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/30 20:28:18 by hyeonsok          #+#    #+#             */
-/*   Updated: 2021/01/03 22:32:08 by hyeonsok         ###   ########.fr       */
+/*   Updated: 2021/01/03 22:51:48 by hyeonsok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void			*free_strs(char **ret)
+static void		free_strs(char **ret)
 {
 	char	**div;
 
@@ -24,7 +24,6 @@ void			*free_strs(char **ret)
 	}
 	free(ret);
 	ret = NULL;
-	return (NULL);
 }
 
 static char		**divide_str(char **div, char const *s, char c)
@@ -41,7 +40,10 @@ static char		**divide_str(char **div, char const *s, char c)
 		while ((*s != '\0') && (*s++ != c))
 			len++;
 		if (!(*div = ft_calloc(len + 1, sizeof(char))))
-			return (free_str(ret));
+		{
+			free_strs(ret);
+			return (NULL);
+		}
 		ft_memcpy(*div, str, len);
 		while ((*s == c) && (*s != '\0'))
 			s++;

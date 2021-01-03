@@ -6,7 +6,7 @@
 #    By: hyeonsok <hyeonsok@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/26 11:13:05 by hyeonsok          #+#    #+#              #
-#    Updated: 2021/01/03 11:34:42 by hyeonsok         ###   ########.fr        #
+#    Updated: 2021/01/03 22:58:19 by hyeonsok         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,8 +16,6 @@ NAME = libft.a
 
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra
-
-TARGET = $(NAME)
 
 SRCS =	ft_memset.c\
 		ft_bzero.c\
@@ -67,9 +65,9 @@ BRCS =	ft_lstnew.c\
 OBJS = $(SRCS:.c=.o)
 BBJS = $(BRCS:.c=.o)
 
-all : $(TARGET)
+all : $(NAME)
 
-$(TARGET) : $(OBJS)
+$(NAME) : $(OBJS)
 	ar -rcs $@ $^
 
 bonus : $(OBJS) $(BBJS)
