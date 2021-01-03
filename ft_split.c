@@ -6,7 +6,7 @@
 /*   By: hyeonsok <hyeonsok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/30 20:28:18 by hyeonsok          #+#    #+#             */
-/*   Updated: 2021/01/03 11:58:07 by hyeonsok         ###   ########.fr       */
+/*   Updated: 2021/01/03 20:25:35 by hyeonsok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,12 @@ static char		**divide_str(char **div, char const *s, char c)
 		{
 			div = ret;
 			while (*div != NULL)
-				free(*div++);
+			{
+				free(*div);
+				*div++ = NULL;
+			}
 			free(ret);
+			ret = NULL;
 			return (NULL);
 		}
 		ft_memcpy(*div, str, len);

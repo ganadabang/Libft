@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: SSONG <SSONG@student.42.fr>                +#+  +:+       +#+        */
+/*   By: hyeonsok <hyeonsok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/24 17:27:07 by SSONG             #+#    #+#             */
-/*   Updated: 2020/12/26 15:17:42 by hyeonsok         ###   ########.fr       */
+/*   Updated: 2021/01/03 20:19:59 by hyeonsok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
 	if (!dst && !src)
-		return (0);
+		return (NULL);
 	while (n)
 	{
 		*(unsigned char *)dst = *(unsigned char *)src++;
@@ -23,5 +23,5 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 			return (dst);
 		n--;
 	}
-	return (0);
+	return (NULL);
 }

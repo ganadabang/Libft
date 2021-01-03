@@ -6,7 +6,7 @@
 /*   By: hyeonsok <hyeonsok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/29 17:30:56 by hyeonsok          #+#    #+#             */
-/*   Updated: 2021/01/03 11:37:51 by hyeonsok         ###   ########.fr       */
+/*   Updated: 2021/01/03 20:41:03 by hyeonsok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*sub;
 
 	if (!s || !(sub = ft_calloc(len + 1, sizeof(char))))
-		return (0);
+		return (NULL);
 	if (!*s || start >= ft_strlen(s))
 		return (sub);
 	s += start;

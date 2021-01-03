@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: SSONG <SSONG@student.42.fr>                +#+  +:+       +#+        */
+/*   By: hyeonsok <hyeonsok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/25 13:26:28 by SSONG             #+#    #+#             */
-/*   Updated: 2020/12/29 00:35:33 by hyeonsok         ###   ########.fr       */
+/*   Updated: 2021/01/03 20:31:15 by hyeonsok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,6 @@ size_t		ft_strlcat(char *dst, const char *src, size_t dstsize)
 		*dst++ = *src++;
 		dstsize--;
 	}
-	*dst = 0;
+	*dst = '\0';
 	return (dst_len + src_len);
 }

@@ -6,7 +6,7 @@
 /*   By: hyeonsok <hyeonsok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/25 13:41:36 by SSONG             #+#    #+#             */
-/*   Updated: 2020/12/30 17:54:33 by hyeonsok         ###   ########.fr       */
+/*   Updated: 2021/01/03 20:31:42 by hyeonsok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,5 @@ char	*ft_strchr(const char *s, int c)
 	}
 	if (*s == c)
 		return ((char *)s);
-	return (0);
+	return (NULL);
 }

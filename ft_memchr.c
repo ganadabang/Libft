@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: SSONG <SSONG@student.42.fr>                +#+  +:+       +#+        */
+/*   By: hyeonsok <hyeonsok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/24 20:35:12 by SSONG             #+#    #+#             */
-/*   Updated: 2020/12/24 21:29:13 by hyeonsok         ###   ########.fr       */
+/*   Updated: 2021/01/03 20:20:36 by hyeonsok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,5 @@ void	*ft_memchr(const void *s, int c, size_t n)
 			return ((void *)s);
 		s++;
 	}
-	return (0);
+	return (NULL);
 }

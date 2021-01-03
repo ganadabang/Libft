@@ -6,7 +6,7 @@
 /*   By: hyeonsok <hyeonsok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/24 23:17:19 by SSONG             #+#    #+#             */
-/*   Updated: 2021/01/03 11:56:34 by hyeonsok         ###   ########.fr       */
+/*   Updated: 2021/01/03 20:46:03 by hyeonsok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ size_t		ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	if (!dst && !src)
 		return (0);
 	len = ft_strlen(src);
-	if (!dstsize || !dst)
+	if (!dst || !dstsize)
 		return (len);
 	while (*src && --dstsize)
 		*dst++ = *src++;
-	*dst = 0;
+	*dst = '\0';
 	return (len);
 }
