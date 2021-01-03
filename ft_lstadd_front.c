@@ -6,16 +6,16 @@
 /*   By: hyeonsok <hyeonsok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/03 01:30:26 by hyeonsok          #+#    #+#             */
-/*   Updated: 2021/01/03 04:01:52 by hyeonsok         ###   ########.fr       */
+/*   Updated: 2021/01/03 07:36:12 by hyeonsok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstadd_front(t_list **lst, t_list *new)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
 	if (lst == NULL || new == NULL)
-		return;
+		return ;
 	new->next = (*lst);
 	*lst = new;
 }

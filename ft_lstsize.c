@@ -6,7 +6,7 @@
 /*   By: hyeonsok <hyeonsok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/03 02:24:27 by hyeonsok          #+#    #+#             */
-/*   Updated: 2021/01/03 04:01:55 by hyeonsok         ###   ########.fr       */
+/*   Updated: 2021/01/03 18:28:18 by hyeonsok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int		ft_lstsize(t_list *lst)
 	if (lst == NULL)
 		return (0);
 	size = 1;
-	while(lst->next != NULL)
+	while (lst->next != NULL)
 	{
 		size++;
 		lst = lst->next;

@@ -6,7 +6,7 @@
 #    By: hyeonsok <hyeonsok@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/26 11:13:05 by hyeonsok          #+#    #+#              #
-#    Updated: 2021/01/03 04:31:26 by hyeonsok         ###   ########.fr        #
+#    Updated: 2021/01/03 11:34:42 by hyeonsok         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,12 +57,12 @@ SRCS =	ft_memset.c\
 BRCS =	ft_lstnew.c\
 		ft_lstadd_front.c\
 		ft_lstsize.c\
-		*ft_lstlast.c\
+		ft_lstlast.c\
 		ft_lstadd_back.c\
 		ft_lstdelone.c\
 		ft_lstclear.c\
 		ft_lstiter.c\
-		*ft_lstmap.c
+		ft_lstmap.c
 
 OBJS = $(SRCS:.c=.o)
 BBJS = $(BRCS:.c=.o)

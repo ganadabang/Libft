@@ -6,7 +6,7 @@
 /*   By: hyeonsok <hyeonsok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/02 23:16:29 by hyeonsok          #+#    #+#             */
-/*   Updated: 2021/01/03 00:04:06 by hyeonsok         ###   ########.fr       */
+/*   Updated: 2021/01/03 18:43:58 by hyeonsok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,18 @@
 static void		put_abs_fd(unsigned int abs, int fd)
 {
 	if (fd < 0)
-		return;
+		return ;
 	if (abs > 9)
 		put_abs_fd(abs / 10, fd);
 	ft_putchar_fd(abs % 10 + '0', fd);
 }
-void	ft_putnbr_fd(int n, int fd)
+
+void			ft_putnbr_fd(int n, int fd)
 {
 	unsigned int	abs;
 
 	if (fd < 0)
-		return;
+		return ;
 	abs = n;
 	if (n < 0)
 	{

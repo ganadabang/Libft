@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: SSONG <SSONG@student.42.fr>                +#+  +:+       +#+        */
+/*   By: hyeonsok <hyeonsok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/25 17:36:44 by SSONG             #+#    #+#             */
-/*   Updated: 2020/12/26 21:47:38 by hyeonsok         ###   ########.fr       */
+/*   Updated: 2021/01/03 07:16:51 by hyeonsok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	void *ptr;
-	void *first_ptr;
-	unsigned long long len;
+	void				*ptr;
+	void				*first_ptr;
+	unsigned long long	len;
 
 	len = size * count;
-	if(!(ptr = (void *)malloc(len)))
+	if (!(ptr = (void *)malloc(len)))
 		return (0);
 	first_ptr = ptr;
 	while (len--)

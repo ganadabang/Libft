@@ -6,7 +6,7 @@
 /*   By: hyeonsok <hyeonsok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/22 20:51:02 by hyeonsok          #+#    #+#             */
-/*   Updated: 2021/01/03 02:34:48 by hyeonsok         ###   ########.fr       */
+/*   Updated: 2021/01/03 07:12:24 by hyeonsok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,6 @@
 
 # include <stdlib.h>
 # include <unistd.h>
-
-# ifndef NULL
-#  define NULL ((void *)0)
-# endif
 
 typedef struct s_list
 {

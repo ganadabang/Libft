@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: SSONG <SSONG@student.42.fr>                +#+  +:+       +#+        */
+/*   By: hyeonsok <hyeonsok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/25 14:00:47 by SSONG             #+#    #+#             */
-/*   Updated: 2020/12/26 16:45:33 by hyeonsok         ###   ########.fr       */
+/*   Updated: 2021/01/03 09:34:31 by hyeonsok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strrchr(const char *s, int c)
 	{
 		if (*s == (char)c)
 			return ((char *)s);
-        s--;
+		s--;
 	}
 	return (0);
 }

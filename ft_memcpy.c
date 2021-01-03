@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: SSONG <SSONG@student.42.fr>                +#+  +:+       +#+        */
+/*   By: hyeonsok <hyeonsok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/24 15:50:14 by SSONG             #+#    #+#             */
-/*   Updated: 2020/12/28 00:20:58 by hyeonsok         ###   ########.fr       */
+/*   Updated: 2021/01/03 18:29:37 by hyeonsok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	first_dst = dst;
 	if (dst == src)
 		return (first_dst);
-	while (n--) 
+	while (n--)
 		*(char *)dst++ = *(char *)src++;
 	return (first_dst);
 }

@@ -6,7 +6,7 @@
 /*   By: hyeonsok <hyeonsok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/24 23:10:08 by SSONG             #+#    #+#             */
-/*   Updated: 2020/12/29 21:10:44 by hyeonsok         ###   ########.fr       */
+/*   Updated: 2021/01/03 11:54:52 by hyeonsok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t		ft_strlen(const char *s)
 	size_t len;
 
 	len = 0;
-	while (*s && *s++)
+	while (*s++)
 		len++;
 	return (len);
 }
