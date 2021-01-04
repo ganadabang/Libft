@@ -6,7 +6,7 @@
 /*   By: hyeonsok <hyeonsok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/30 20:28:18 by hyeonsok          #+#    #+#             */
-/*   Updated: 2021/01/05 01:59:15 by hyeonsok         ###   ########.fr       */
+/*   Updated: 2021/01/05 02:10:13 by hyeonsok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,12 +58,14 @@ static size_t	get_count(char const *s, char c)
 
 	if (s == NULL || *s == '\0')
 		return (0);
+	if (c == '\0')
+		return (1);
 	count = 1;
 	while (*s)
 	{
 		if (*s == c)
 			count++;
-		while (*s != '\0' && *s == c)
+		while (*s == c)
 			s++;
 		if (*s != '\0')
 			s++;
