@@ -6,7 +6,7 @@
 /*   By: hyeonsok <hyeonsok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/30 20:28:18 by hyeonsok          #+#    #+#             */
-/*   Updated: 2021/01/04 03:07:55 by hyeonsok         ###   ########.fr       */
+/*   Updated: 2021/01/05 01:59:15 by hyeonsok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,10 @@ static size_t	get_count(char const *s, char c)
 	{
 		if (*s == c)
 			count++;
-		while (*s++ == c);
+		while (*s != '\0' && *s == c)
+			s++;
+		if (*s != '\0')
+			s++;
 	}
 	if (*--s == c)
 		count--;
@@ -79,7 +82,7 @@ char			**ft_split(char const *s, char c)
 		return (NULL);
 	while ((*s == c) && (*s != '\0'))
 		s++;
-	count = get_count(s, c);
+	count = get_count((char *)s, c);
 	if (!(div = (char **)malloc(sizeof(char *) * (count + 1))))
 		return (NULL);
 	ft_memset(div, 0, sizeof(char *) * (count + 1));
