@@ -6,7 +6,7 @@
 /*   By: hyeonsok <hyeonsok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/22 20:51:02 by hyeonsok          #+#    #+#             */
-/*   Updated: 2021/01/03 22:42:39 by hyeonsok         ###   ########.fr       */
+/*   Updated: 2021/06/02 13:59:56 by hyeonsok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,11 @@ void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char *s, int fd);
 void			ft_putendl_fd(char *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
+
+int				ft_issign(char c);
+long long		ft_atoll(const char *str);
+int				ft_isdigits(char *str);
+
 /*
 **Bonus part
 */

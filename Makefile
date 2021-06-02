@@ -6,11 +6,11 @@
 #    By: hyeonsok <hyeonsok@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/26 11:13:05 by hyeonsok          #+#    #+#              #
-#    Updated: 2021/01/03 22:58:19 by hyeonsok         ###   ########.fr        #
+#    Updated: 2021/06/02 13:56:57 by hyeonsok         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-.PHONY : all bonus clean fclean re 
+.PHONY : all bonus clean fclean re
 
 NAME = libft.a
 
@@ -50,7 +50,10 @@ SRCS =	ft_memset.c\
 		ft_putchar_fd.c\
 		ft_putstr_fd.c\
 		ft_putendl_fd.c\
-		ft_putnbr_fd.c
+		ft_putnbr_fd.c\
+		ft_isdigits.c\
+		ft_issign.c\
+		ft_atoll.c\
 
 BRCS =	ft_lstnew.c\
 		ft_lstadd_front.c\
@@ -74,7 +77,7 @@ bonus : $(OBJS) $(BBJS)
 	ar -rcs $(NAME) $^
 
 .c.o :
-	$(CC) $(CFLAGS) -c -o $@ $< 
+	$(CC) $(CFLAGS) -c -o $@ $<
 
 clean :
 	rm -rf $(OBJS) $(BBJS)
