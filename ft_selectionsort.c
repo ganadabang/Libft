@@ -6,7 +6,7 @@
 /*   By: hyeonsok <hyeonsok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 15:07:56 by hyeonsok          #+#    #+#             */
-/*   Updated: 2021/06/04 07:18:00 by hyeonsok         ###   ########.fr       */
+/*   Updated: 2021/06/04 17:45:43 by hyeonsok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,5 @@ int	*ft_selection_sort(int arr[], int size)
 		arr[i] = temp;
 		i--;
 	}
-	return(arr);
+	return (arr);
 }

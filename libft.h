@@ -6,7 +6,7 @@
 /*   By: hyeonsok <hyeonsok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/22 20:51:02 by hyeonsok          #+#    #+#             */
-/*   Updated: 2021/06/04 14:39:19 by hyeonsok         ###   ########.fr       */
+/*   Updated: 2021/06/04 17:48:30 by hyeonsok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,15 @@ typedef struct	s_list
 }				t_list;
 
 typedef struct	s_node {
-	struct	s_node	*next;
-	struct	s_node	*prev;
+	struct s_node	*next;
+	struct s_node	*prev;
 	int				data;
-}				t_node ;
+}				t_node;
 
 typedef struct	s_dclst {
-	struct	s_node *head;
+	struct s_node	*head;
 	int				count;
-}				t_dclst ;
-
+}				t_dclst;
 /*
 **Libc functions
 */
@@ -62,7 +61,7 @@ int				ft_tolower(int c);
 void			*ft_calloc(size_t count, size_t size);
 char			*ft_strdup(const char *s1);
 /*
-**Addtional fuctions
+** Addtional fuctions
 */
 char			*ft_substr(char const *s, unsigned int start, size_t len);
 char			*ft_strtrim(char const *s1, char const *set);
@@ -74,13 +73,11 @@ void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char *s, int fd);
 void			ft_putendl_fd(char *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
-
 int				ft_issign(char c);
 long long		ft_atoll(const char *str);
 int				ft_isdigits(char *str);
-
 /*
-**Bonus part
+** Bonus part
 */
 t_list			*ft_lstnew(void *content);
 void			ft_lstadd_front(t_list **lst, t_list *new);
@@ -93,10 +90,9 @@ void			ft_lstiter(t_list *lst, void (*f)(void *));
 t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
 														void (*del)(void *));
 /*
-what i write for my needs
- */
+** what i write for my needs
+*/
 int				*ft_selection_sort(int arr[], int size);
-
 t_dclst			*ft_dclstinit(void);
 void			ft_dclstclear(t_dclst *lst);
 int				ft_dclstisalign(t_dclst *a);
@@ -107,6 +103,5 @@ void			ft_addnode_prev(t_node *node, t_node *add, t_dclst *lst);
 void			ft_addnode_next(t_node *node, t_node *add, t_dclst *lst);
 void			ft_error(void);
 char			*ft_skipch(char ch, char *str);
-
 
 #endif
