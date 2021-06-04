@@ -6,12 +6,12 @@
 /*   By: hyeonsok <hyeonsok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/22 20:51:02 by hyeonsok          #+#    #+#             */
-/*   Updated: 2021/06/02 13:59:56 by hyeonsok         ###   ########.fr       */
+/*   Updated: 2021/06/04 14:39:19 by hyeonsok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _LIBFT_H
-# define _LIBFT_H
+#ifndef LIBFT_H
+# define LIBFT_H
 
 # include <stdlib.h>
 # include <unistd.h>
@@ -21,6 +21,18 @@ typedef struct	s_list
 	void			*content;
 	struct s_list	*next;
 }				t_list;
+
+typedef struct	s_node {
+	struct	s_node	*next;
+	struct	s_node	*prev;
+	int				data;
+}				t_node ;
+
+typedef struct	s_dclst {
+	struct	s_node *head;
+	int				count;
+}				t_dclst ;
+
 /*
 **Libc functions
 */
@@ -80,4 +92,21 @@ void			ft_lstclear(t_list **lst, void (*del)(void *));
 void			ft_lstiter(t_list *lst, void (*f)(void *));
 t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
 														void (*del)(void *));
+/*
+what i write for my needs
+ */
+int				*ft_selection_sort(int arr[], int size);
+
+t_dclst			*ft_dclstinit(void);
+void			ft_dclstclear(t_dclst *lst);
+int				ft_dclstisalign(t_dclst *a);
+t_node			*ft_dclstpeek(t_dclst *lst, int data);
+t_node			*ft_nodenew(int num);
+t_node			*ft_nodepop(t_node *node, t_dclst *lst);
+void			ft_addnode_prev(t_node *node, t_node *add, t_dclst *lst);
+void			ft_addnode_next(t_node *node, t_node *add, t_dclst *lst);
+void			ft_error(void);
+char			*ft_skipch(char ch, char *str);
+
+
 #endif

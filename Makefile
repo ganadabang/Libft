@@ -6,7 +6,7 @@
 #    By: hyeonsok <hyeonsok@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/26 11:13:05 by hyeonsok          #+#    #+#              #
-#    Updated: 2021/06/02 13:56:57 by hyeonsok         ###   ########.fr        #
+#    Updated: 2021/06/04 15:54:19 by hyeonsok         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,8 +54,7 @@ SRCS =	ft_memset.c\
 		ft_isdigits.c\
 		ft_issign.c\
 		ft_atoll.c\
-
-BRCS =	ft_lstnew.c\
+		ft_lstnew.c\
 		ft_lstadd_front.c\
 		ft_lstsize.c\
 		ft_lstlast.c\
@@ -63,18 +62,30 @@ BRCS =	ft_lstnew.c\
 		ft_lstdelone.c\
 		ft_lstclear.c\
 		ft_lstiter.c\
-		ft_lstmap.c
+		ft_lstmap.c\
+		ft_selectionsort.c\
+		ft_atoll.c\
+		ft_isdigits.c\
+		ft_addnode_next.c\
+		ft_addnode_prev.c\
+		ft_argv_likebash.c\
+		ft_dclstclear.c\
+		ft_dclstinit.c\
+		ft_dclstisalign.c\
+		ft_dclstpeek.c\
+		ft_error.c\
+		ft_nodenew.c\
+		ft_nodepop.c\
+		ft_skipch.c\
+		ft_argv_likebash.c
+
 
 OBJS = $(SRCS:.c=.o)
-BBJS = $(BRCS:.c=.o)
 
 all : $(NAME)
 
 $(NAME) : $(OBJS)
 	ar -rcs $@ $^
-
-bonus : $(OBJS) $(BBJS)
-	ar -rcs $(NAME) $^
 
 .c.o :
 	$(CC) $(CFLAGS) -c -o $@ $<
