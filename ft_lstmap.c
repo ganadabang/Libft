@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hyeonsok <hyeonsok@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hyeonsok <hyeonsok@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/03 04:40:37 by hyeonsok          #+#    #+#             */
-/*   Updated: 2021/01/04 03:14:40 by hyeonsok         ###   ########.fr       */
+/*   Updated: 2021/07/26 01:27:56 by hyeonsok         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,15 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 
 	if (lst == NULL || f == NULL)
 		return (NULL);
-	if (!(ret = ft_lstnew(f(lst->content))))
+	ret = ft_lstnew(f(lst->content));
+	if (!ret)
 		return (NULL);
 	tmp = ret;
 	lst = lst->next;
 	while (lst != NULL)
 	{
-		if (!(new = ft_lstnew(f(lst->content))))
+		new = ft_lstnew(f(lst->content));
+		if (!new)
 		{
 			ft_lstclear(&ret, del);
 			return (NULL);

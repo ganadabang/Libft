@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hyeonsok <hyeonsok@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hyeonsok <hyeonsok@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/02 23:16:29 by hyeonsok          #+#    #+#             */
-/*   Updated: 2021/01/03 18:43:58 by hyeonsok         ###   ########.fr       */
+/*   Updated: 2021/07/26 01:16:24 by hyeonsok         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void		put_abs_fd(unsigned int abs, int fd)
+static void	put_abs_fd(unsigned int abs, int fd)
 {
 	if (fd < 0)
 		return ;
@@ -21,7 +21,7 @@ static void		put_abs_fd(unsigned int abs, int fd)
 	ft_putchar_fd(abs % 10 + '0', fd);
 }
 
-void			ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
 	unsigned int	abs;
 

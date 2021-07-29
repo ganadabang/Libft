@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hyeonsok <hyeonsok@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hyeonsok <hyeonsok@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/29 17:30:56 by hyeonsok          #+#    #+#             */
-/*   Updated: 2021/01/04 03:17:41 by hyeonsok         ###   ########.fr       */
+/*   Updated: 2021/07/26 01:37:01 by hyeonsok         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*sub;
 
-	if (!s || !(sub = ft_calloc(len + 1, sizeof(char))))
+	sub = ft_calloc(len + 1, sizeof(char));
+	if (!s || !sub)
 		return (NULL);
 	if (!*s || start >= ft_strlen(s))
 		return (sub);

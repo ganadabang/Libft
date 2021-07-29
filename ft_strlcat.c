@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hyeonsok <hyeonsok@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hyeonsok <hyeonsok@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/25 13:26:28 by SSONG             #+#    #+#             */
-/*   Updated: 2021/06/04 17:44:45 by hyeonsok         ###   ########.fr       */
+/*   Updated: 2021/07/26 01:41:00 by hyeonsok         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t		ft_strlcat(char *dst, const char *src, size_t dstsize)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t dst_len;
-	size_t src_len;
+	size_t	dst_len;
+	size_t	src_len;
 
 	src_len = ft_strlen(src);
 	if (dst == NULL && dstsize == 0)

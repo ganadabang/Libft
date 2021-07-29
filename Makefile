@@ -6,7 +6,7 @@
 #    By: hyeonsok <hyeonsok@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/26 11:13:05 by hyeonsok          #+#    #+#              #
-#    Updated: 2021/06/04 15:54:19 by hyeonsok         ###   ########.fr        #
+#    Updated: 2021/06/04 21:31:56 by hyeonsok         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -77,7 +77,8 @@ SRCS =	ft_memset.c\
 		ft_nodenew.c\
 		ft_nodepop.c\
 		ft_skipch.c\
-		ft_argv_likebash.c
+		ft_argv_likebash.c\
+		get_next_line.c\
 
 
 OBJS = $(SRCS:.c=.o)

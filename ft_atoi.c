@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hyeonsok <hyeonsok@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hyeonsok <hyeonsok@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/25 16:16:40 by SSONG             #+#    #+#             */
-/*   Updated: 2021/01/04 03:34:08 by hyeonsok         ###   ########.fr       */
+/*   Updated: 2021/07/30 00:10:43 by hyeonsok         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <limits.h>
 
-int		ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
 	size_t	val;
 	int		sign;

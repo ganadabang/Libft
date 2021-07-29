@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_argv_likebash.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hyeonsok <hyeonsok@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hyeonsok <hyeonsok@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 08:10:40 by hyeonsok          #+#    #+#             */
-/*   Updated: 2021/06/04 12:58:05 by hyeonsok         ###   ########.fr       */
+/*   Updated: 2021/07/26 01:41:46 by hyeonsok         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 
 char	**ft_argv_likebash(int ac, char *av[])
 {
+	char	*v;
 	char	*join;
+	char	*tmp;
+	char	**ret;
 	int		i;
 
 	if (!av)
@@ -23,9 +26,14 @@ char	**ft_argv_likebash(int ac, char *av[])
 	join = NULL;
 	while (i < ac)
 	{
-		av[i] = ft_strjoin(av[i], " ");
-		join = ft_strjoin(join, av[i]);
+		v = ft_strjoin(av[i], " ");
+		tmp = join;
+		join = ft_strjoin(join, v);
+		free(v);
+		free(tmp);
 		i++;
 	}
-	return (ft_split(join, ' '));
+	ret = ft_split(join, ' ');
+	free(join);
+	return (ret);
 }

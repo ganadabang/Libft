@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_selectionsort.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hyeonsok <hyeonsok@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hyeonsok <hyeonsok@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 15:07:56 by hyeonsok          #+#    #+#             */
-/*   Updated: 2021/06/04 17:45:43 by hyeonsok         ###   ########.fr       */
+/*   Updated: 2021/07/26 01:12:58 by hyeonsok         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 int	*ft_selection_sort(int arr[], int size)
 {
 	int	max;
-	int temp;
+	int	temp;
 	int	i;
-	int j;
+	int	j;
 
 	i = size - 1;
 	j = 0;

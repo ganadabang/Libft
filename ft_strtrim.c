@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hyeonsok <hyeonsok@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hyeonsok <hyeonsok@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/29 19:03:38 by hyeonsok          #+#    #+#             */
-/*   Updated: 2021/01/03 11:40:09 by hyeonsok         ###   ########.fr       */
+/*   Updated: 2021/07/26 01:40:10 by hyeonsok         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char			*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	idx;
 	char	*ret;
@@ -30,7 +30,8 @@ char			*ft_strtrim(char const *s1, char const *set)
 		s1--;
 		idx--;
 	}
-	if (!(ret = ft_calloc(idx + 1, sizeof(char))))
+	ret = ft_calloc(idx + 1, sizeof(char));
+	if (!ret)
 		return (0);
 	s1 -= (idx - 1);
 	return ((char *)ft_memcpy(ret, s1, idx));

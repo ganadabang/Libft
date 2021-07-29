@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hyeonsok <hyeonsok@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hyeonsok <hyeonsok@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/25 17:44:28 by SSONG             #+#    #+#             */
-/*   Updated: 2021/01/03 20:28:34 by hyeonsok         ###   ########.fr       */
+/*   Updated: 2021/07/26 01:38:54 by hyeonsok         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ char	*ft_strdup(const char *s1)
 	char	*s2;
 
 	len = ft_strlen(s1);
-	if (!(s2 = (char *)malloc(sizeof(char) * len + 1)))
-		return (0);
+	s2 = (char *)malloc(sizeof(char) * len + 1);
+	if (!s2)
+		return (NULL);
 	return (ft_memcpy(s2, s1, len + 1));
 }

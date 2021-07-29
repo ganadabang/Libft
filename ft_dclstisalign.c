@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_dclstisalign.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hyeonsok <hyeonsok@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hyeonsok <hyeonsok@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 08:40:40 by hyeonsok          #+#    #+#             */
-/*   Updated: 2021/06/04 08:42:56 by hyeonsok         ###   ########.fr       */
+/*   Updated: 2021/07/26 01:48:45 by hyeonsok         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_dclstisalign(t_dclst *a)
+int	ft_dclstisalign(t_dclst *a)
 {
 	int		count;
 	int		curr_data;

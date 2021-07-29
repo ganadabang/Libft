@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hyeonsok <hyeonsok@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hyeonsok <hyeonsok@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/22 20:51:02 by hyeonsok          #+#    #+#             */
-/*   Updated: 2021/06/04 17:48:30 by hyeonsok         ###   ########.fr       */
+/*   Updated: 2021/07/26 01:20:56 by hyeonsok         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,30 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <fcntl.h>
+# include <limits.h>
 
-typedef struct	s_list
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 4096
+# endif
+
+# ifndef OPEN_MAX
+#  define OPEN_MAX _SC_OPEN_MAX
+# endif
+
+typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
 }				t_list;
 
-typedef struct	s_node {
+typedef struct s_node {
 	struct s_node	*next;
 	struct s_node	*prev;
 	int				data;
 }				t_node;
 
-typedef struct	s_dclst {
+typedef struct s_dclst {
 	struct s_node	*head;
 	int				count;
 }				t_dclst;
@@ -47,8 +57,8 @@ size_t			ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t			ft_strlcat(char *dst, const char *src, size_t dstsize);
 char			*ft_strchr(const char *s, int c);
 char			*ft_strrchr(const char *s, int c);
-char			*ft_strnstr(const char *haystack, const char *needle,
-																size_t len);
+char			*ft_strnstr(const char *haystack, const char *needle, \
+				size_t len);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
 int				ft_atoi(const char *str);
 int				ft_isalpha(int c);
@@ -87,8 +97,8 @@ void			ft_lstadd_back(t_list **lst, t_list *new);
 void			ft_lstdelone(t_list *lst, void (*del)(void *));
 void			ft_lstclear(t_list **lst, void (*del)(void *));
 void			ft_lstiter(t_list *lst, void (*f)(void *));
-t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
-														void (*del)(void *));
+t_list			*ft_lstmap(t_list *lst, void *(*f)(void *), \
+				void (*del)(void *));
 /*
 ** what i write for my needs
 */
@@ -103,5 +113,7 @@ void			ft_addnode_prev(t_node *node, t_node *add, t_dclst *lst);
 void			ft_addnode_next(t_node *node, t_node *add, t_dclst *lst);
 void			ft_error(void);
 char			*ft_skipch(char ch, char *str);
+int				get_next_line(int fd, char **lineptr);
+char			**ft_argv_likebash(int ac, char *av[]);
 
 #endif

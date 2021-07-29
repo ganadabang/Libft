@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hyeonsok <hyeonsok@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hyeonsok <hyeonsok@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/03 07:20:35 by hyeonsok          #+#    #+#             */
-/*   Updated: 2021/01/03 07:55:21 by hyeonsok         ###   ########.fr       */
+/*   Updated: 2021/07/26 01:36:02 by hyeonsok         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static unsigned	int		conv_to_abs(int n)
+static unsigned	int	conv_to_abs(int n)
 {
 	unsigned int	n_abs;
 
@@ -23,14 +23,14 @@ static unsigned	int		conv_to_abs(int n)
 	return (n_abs);
 }
 
-static unsigned	int		get_len(unsigned int n)
+static unsigned	int	get_len(unsigned int n)
 {
 	if (n >= 0 && n < 10)
 		return (1);
 	return (1 + get_len(n / 10));
 }
 
-static char				*conv_abs_to_str(char *str, unsigned int abs)
+static char	*conv_abs_to_str(char *str, unsigned int abs)
 {
 	if (str == NULL)
 		return (NULL);
@@ -41,7 +41,7 @@ static char				*conv_abs_to_str(char *str, unsigned int abs)
 	return (conv_abs_to_str(str, abs / 10));
 }
 
-char					*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	unsigned int	abs;
 	unsigned int	len;
@@ -53,7 +53,8 @@ char					*ft_itoa(int n)
 	is_minus = 0;
 	if (n < 0)
 		is_minus = 1;
-	if (!(str = ft_calloc(is_minus + len + 1, sizeof(char))))
+	str = ft_calloc(is_minus + len + 1, sizeof(char));
+	if (!str)
 		return (NULL);
 	if (abs == 0)
 	{

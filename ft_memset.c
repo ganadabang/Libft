@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: SSONG <SSONG@student.42.fr>                +#+  +:+       +#+        */
+/*   By: hyeonsok <hyeonsok@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/22 20:21:36 by hyeonsok          #+#    #+#             */
-/*   Updated: 2020/12/26 13:12:25 by hyeonsok         ###   ########.fr       */
+/*   Updated: 2021/07/26 01:36:18 by hyeonsok         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memset(void *b, int c, size_t len)
 {
-	void *first_b;
+	void	*first_b;
 
 	first_b = b;
 	while (len--)

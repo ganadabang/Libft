@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hyeonsok <hyeonsok@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hyeonsok <hyeonsok@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/02 20:44:55 by hyeonsok          #+#    #+#             */
-/*   Updated: 2021/01/03 11:43:04 by hyeonsok         ###   ########.fr       */
+/*   Updated: 2021/07/26 01:37:53 by hyeonsok         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	if (s == NULL || f == NULL)
 		return (NULL);
 	len = ft_strlen(s);
-	if (!(new = ft_calloc(len + 1, sizeof(char))))
+	new = ft_calloc(len + 1, sizeof(char));
+	if (!new)
 		return (NULL);
 	idx = 0;
 	while (idx < len)

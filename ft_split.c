@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hyeonsok <hyeonsok@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hyeonsok <hyeonsok@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/30 20:28:18 by hyeonsok          #+#    #+#             */
-/*   Updated: 2021/01/05 02:10:13 by hyeonsok         ###   ########.fr       */
+/*   Updated: 2021/07/26 01:33:08 by hyeonsok         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void		free_strs(char **ret)
+static void	free_strs(char **ret)
 {
 	char	**div;
 
@@ -26,7 +26,7 @@ static void		free_strs(char **ret)
 	ret = NULL;
 }
 
-static char		**divide_str(char **div, char const *s, char c)
+static char	**divide_str(char **div, char const *s, char c)
 {
 	size_t		len;
 	char const	*str;
@@ -39,7 +39,8 @@ static char		**divide_str(char **div, char const *s, char c)
 		str = s;
 		while ((*s != '\0') && (*s++ != c))
 			len++;
-		if (!(*div = ft_calloc(len + 1, sizeof(char))))
+		*div = ft_calloc(len + 1, sizeof(char));
+		if (!*div)
 		{
 			free_strs(ret);
 			return (NULL);
@@ -54,7 +55,7 @@ static char		**divide_str(char **div, char const *s, char c)
 
 static size_t	get_count(char const *s, char c)
 {
-	size_t		count;
+	size_t	count;
 
 	if (s == NULL || *s == '\0')
 		return (0);
@@ -75,7 +76,7 @@ static size_t	get_count(char const *s, char c)
 	return (count);
 }
 
-char			**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	char	**div;
 	size_t	count;
@@ -85,7 +86,8 @@ char			**ft_split(char const *s, char c)
 	while ((*s == c) && (*s != '\0'))
 		s++;
 	count = get_count((char *)s, c);
-	if (!(div = (char **)malloc(sizeof(char *) * (count + 1))))
+	div = (char **)malloc(sizeof(char *) * (count + 1));
+	if (!div)
 		return (NULL);
 	ft_memset(div, 0, sizeof(char *) * (count + 1));
 	return (divide_str(div, s, c));

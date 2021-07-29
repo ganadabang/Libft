@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: SSONG <SSONG@student.42.fr>                +#+  +:+       +#+        */
+/*   By: hyeonsok <hyeonsok@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/24 17:54:15 by SSONG             #+#    #+#             */
-/*   Updated: 2020/12/29 17:27:17 by hyeonsok         ###   ########.fr       */
+/*   Updated: 2021/07/26 01:41:18 by hyeonsok         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t n)
 {
-	void *first_dst;
+	void	*first_dst;
 
 	first_dst = dst;
 	if (dst == src)
