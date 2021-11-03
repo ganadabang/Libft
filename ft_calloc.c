@@ -6,7 +6,7 @@
 /*   By: hyeonsok <hyeonsok@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/25 17:36:44 by SSONG             #+#    #+#             */
-/*   Updated: 2021/07/26 01:39:28 by hyeonsok         ###   ########seoul.kr  */
+/*   Updated: 2021/11/04 04:47:19 by hyeonsok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,19 @@
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	void				*ptr;
-	void				*first_ptr;
-	unsigned long long	len;
+	void	*p;
+	void	*s;
+	size_t	i;
 
-	len = size * count;
-	ptr = (void *)malloc(len);
-	if (!ptr)
+	s = (void *)malloc(count * size);
+	if (s == NULL)
 		return (NULL);
-	first_ptr = ptr;
-	while (len--)
-		*(char *)ptr++ = '\0';
-	return (first_ptr);
+	p = s;
+	while (count-- > 0)
+	{
+		i = size;
+		while (i-- > 0)
+			*(char *)p++ = '\0';
+	}
+	return (s); 
 }

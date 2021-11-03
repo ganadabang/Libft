@@ -6,7 +6,7 @@
 /*   By: hyeonsok <hyeonsok@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/25 17:35:14 by SSONG             #+#    #+#             */
-/*   Updated: 2021/07/26 01:29:24 by hyeonsok         ###   ########seoul.kr  */
+/*   Updated: 2021/11/04 01:14:08 by hyeonsok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 int	ft_tolower(int c)
 {
 	if (c >= 'A' && c <= 'Z')
-		c -= 'A' - 'a';
+		return (c - 32);
 	return (c);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: SSONG <SSONG@student.42.fr>                +#+  +:+       +#+        */
+/*   By: hyeonsok <hyeonsok@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/23 10:18:35 by hyeonsok          #+#    #+#             */
-/*   Updated: 2020/12/29 02:51:24 by hyeonsok         ###   ########.fr       */
+/*   Updated: 2021/11/04 04:07:07 by hyeonsok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	while (n--)
+	while (n-- > 0)
 		*(unsigned char *)s++ = 0;
 }

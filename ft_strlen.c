@@ -6,18 +6,18 @@
 /*   By: hyeonsok <hyeonsok@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/24 23:10:08 by SSONG             #+#    #+#             */
-/*   Updated: 2021/07/26 01:15:20 by hyeonsok         ###   ########seoul.kr  */
+/*   Updated: 2021/11/04 01:55:13 by hyeonsok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+size_t	ft_strlen(const char *str)
 {
-	const char	*tmp;
+	const char	*s;
 
-	tmp = s;
-	while (*s)
-		s++;
-	return (s - tmp);
+	s = str;
+	while (*str)
+		++str;
+	return (str - s);
 }

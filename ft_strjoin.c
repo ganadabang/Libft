@@ -6,7 +6,7 @@
 /*   By: hyeonsok <hyeonsok@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/29 18:22:07 by hyeonsok          #+#    #+#             */
-/*   Updated: 2021/07/26 01:23:01 by hyeonsok         ###   ########seoul.kr  */
+/*   Updated: 2021/11/04 01:36:12 by hyeonsok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*str;
-	size_t	join_size;
+	char	*join;
+	char	*iter;
 
 	if (s1 == NULL && s2 == NULL)
 		return (NULL);
@@ -23,11 +23,14 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (ft_strdup(s2));
 	if (s2 == NULL)
 		return (ft_strdup(s1));
-	join_size = ft_strlen(s1) + ft_strlen(s2) + 1;
-	str = ft_calloc(join_size, sizeof(char));
-	if (!str)
+	join = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	if (join == NULL)
 		return (NULL);
-	ft_strlcat(str, s1, join_size);
-	ft_strlcat(str, s2, join_size);
-	return (str);
+	iter = join;
+	while (*s1 != '\0')
+		*iter++ = *s1++;
+	while (*s2 != '\0')
+		*iter++ = *s2++;
+	*iter = '\0';
+	return (join);
 }

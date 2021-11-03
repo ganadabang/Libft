@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_ischrs.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyeonsok <hyeonsok@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/25 16:57:45 by SSONG             #+#    #+#             */
-/*   Updated: 2021/11/04 02:02:18 by hyeonsok         ###   ########.fr       */
+/*   Created: 2021/11/04 03:25:29 by hyeonsok          #+#    #+#             */
+/*   Updated: 2021/11/04 03:25:32 by hyeonsok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+int	ft_ischrs(int c, char *chrs)
 {
-	return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
+	return (ft_strchr(chrs, c) != NULL);
 }

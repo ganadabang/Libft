@@ -6,23 +6,22 @@
 /*   By: hyeonsok <hyeonsok@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/25 14:00:47 by SSONG             #+#    #+#             */
-/*   Updated: 2021/07/26 01:44:27 by hyeonsok         ###   ########seoul.kr  */
+/*   Updated: 2021/11/04 04:59:00 by hyeonsok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s1, int ch)
 {
-	size_t	len;
+	char	*s;
 
-	len = ft_strlen(s);
-	s += len++;
-	while (len--)
+	s = s1 + ft_strlen(s1);
+	while (s != s1)
 	{
-		if (*s == (char)c)
-			return ((char *)s);
+		if (*s == ch)
+			return (s);
 		s--;
 	}
-	return (0);
+	return (NULL);
 }
