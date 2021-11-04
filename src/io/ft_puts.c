@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_puts.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyeonsok <hyeonsok@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/02 21:37:15 by hyeonsok          #+#    #+#             */
-/*   Updated: 2021/11/04 19:02:31 by hyeonsok         ###   ########.fr       */
+/*   Created: 2021/11/05 01:26:11 by hyeonsok          #+#    #+#             */
+/*   Updated: 2021/11/05 01:29:34 by hyeonsok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_io.h"
 
-int	ft_putendl_fd(char *s, int fd)
+int	ft_puts(const char *s)
 {
-	return (ft_putstr_fd(s, fd) + ft_putchar_fd('\n', fd));
+	return (write(1, s, ft_strlen(s)));
 }

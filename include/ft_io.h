@@ -6,7 +6,7 @@
 /*   By: hyeonsok <hyeonsok@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 21:00:58 by hyeonsok          #+#    #+#             */
-/*   Updated: 2021/11/04 22:22:23 by hyeonsok         ###   ########.fr       */
+/*   Updated: 2021/11/05 01:13:51 by hyeonsok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,10 @@ int	ft_putnbr(int n);
 /*
  * with fd
  */
-int	ft_putc_fd(int c, int fd);
-int	ft_put_fd(int *s, int fd);
-int	ft_putendl_fd(char *s, int fd);
-int	ft_putnbr_fd(int n, int fd);
+int	ft_dputc(int fd, int c);
+int	ft_dputs(int fd, const char *s);
+int	ft_dputendl(int fd, const char *s);
+int	ft_dputnbr(int fd, int n);
 
 int get_next_line(int fd, char **lineptr);
 int ft_printf(const char *format, ...);

@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyeonsok <hyeonsok@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/02 21:24:44 by hyeonsok          #+#    #+#             */
-/*   Updated: 2021/11/04 18:36:58 by hyeonsok         ###   ########.fr       */
+/*   Created: 2021/11/05 01:25:23 by hyeonsok          #+#    #+#             */
+/*   Updated: 2021/11/05 01:28:33 by hyeonsok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_io.h"
 
-int	ft_putstr_fd(char *s, int fd)
+int	ft_putnbr(int n)
 {
-	return (write(fd, s, ft_strlen(s)));
+	if (n < 0)
+	{
+		return (ft_putc('-') + ft_puts(ft_itoa(n)));
+	}
+	return (ft_puts(ft_itoa(n)));
 }
