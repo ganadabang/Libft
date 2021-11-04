@@ -1,37 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoll.c                                         :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hyeonsok <hyeonsok@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hyeonsok <hyeonsok@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/02 13:57:08 by hyeonsok          #+#    #+#             */
-/*   Updated: 2021/06/02 13:58:12 by hyeonsok         ###   ########.fr       */
+/*   Created: 2020/12/25 16:16:40 by SSONG             #+#    #+#             */
+/*   Updated: 2021/11/04 19:26:10 by hyeonsok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <limits.h>
 
-long long	ft_atoll(const char *str)
+int	ft_atoi(const char *str)
 {
-	unsigned long long	val;
-	int					sign;
+	unsigned int	val;
+	int				sign;
 
-	val = 0;
-	sign = 1;
 	while ((*str >= '\t' && *str <= '\r') || *str == ' ')
-		str++;
+	{
+		++str;
+	}
+	sign = 1;
 	if (*str == '+' || *str == '-')
-		sign = 44 - *str++;
+	{
+		sign = 44 - *str;
+		++str;
+	}
+	val = 0;
 	while (*str >= '0' && *str <= '9')
 	{
-		val *= 10;
-		val += *str++ - '0';
+		val = val * 10 + *str - '0';
+		++str;
 	}
-	if ((val >= LLONG_MAX) && sign == 1)
+	if (val >= 9223372036854775807 && sign == 1)
 		return (-1);
-	if ((val > LLONG_MAX) && sign == -1)
+	if (val > 9223372036854775807 && sign == -1)
 		return (0);
 	return (sign * val);
 }

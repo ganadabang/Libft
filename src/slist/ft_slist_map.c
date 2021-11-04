@@ -1,36 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyeonsok <hyeonsok@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/29 18:22:07 by hyeonsok          #+#    #+#             */
-/*   Updated: 2021/11/04 01:36:12 by hyeonsok         ###   ########.fr       */
+/*   Created: 2021/01/03 04:40:37 by hyeonsok          #+#    #+#             */
+/*   Updated: 2021/11/04 19:45:46 by hyeonsok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	char	*join;
-	char	*iter;
+	t_list	*new;
+	t_list	*ret;
+	t_list	*tmp;
 
-	if (s1 == NULL && s2 == NULL)
+	if (lst == NULL || f == NULL)
 		return (NULL);
-	if (s1 == NULL)
-		return (ft_strdup(s2));
-	if (s2 == NULL)
-		return (ft_strdup(s1));
-	join = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
-	if (join == NULL)
+	ret = ft_lstnew(f(lst->content));
+	if (!ret)
 		return (NULL);
-	iter = join;
-	while (*s1 != '\0')
-		*iter++ = *s1++;
-	while (*s2 != '\0')
-		*iter++ = *s2++;
-	*iter = '\0';
-	return (join);
+	tmp = ret;
+	lst = lst->next;
+	while (lst != NULL)
+	{
+		new = ft_lstnew(f(lst->content));
+		if (!new)
+		{
+			ft_lstclear(&ret, del);
+			return (NULL);
+		}
+		tmp->next = new;
+		tmp = new;
+		lst = lst->next;
+	}
+	return (ret);
 }

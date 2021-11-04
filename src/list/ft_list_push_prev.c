@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_addnode_prev.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hyeonsok <hyeonsok@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: hyeonsok <hyeonsok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/03 03:00:47 by hyeonsok          #+#    #+#             */
-/*   Updated: 2021/07/26 01:13:32 by hyeonsok         ###   ########seoul.kr  */
+/*   Created: 2021/06/04 07:56:11 by hyeonsok          #+#    #+#             */
+/*   Updated: 2021/06/04 07:56:22 by hyeonsok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_addnode_prev(t_node *node, t_node *add, t_dclst *lst)
 {
-	if (lst == NULL || new == NULL)
+	if (node == NULL || add == NULL)
 		return ;
-	if (*lst == NULL)
-		*lst = new;
-	else
-		ft_lstlast(*lst)->next = new;
+	add->next = node;
+	add->prev = node->prev;
+	node->prev->next = add;
+	node->prev = add;
+	lst->count++;
 }

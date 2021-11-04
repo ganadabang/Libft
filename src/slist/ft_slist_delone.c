@@ -1,28 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyeonsok <hyeonsok@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/25 17:44:28 by SSONG             #+#    #+#             */
-/*   Updated: 2021/11/04 04:57:15 by hyeonsok         ###   ########.fr       */
+/*   Created: 2021/01/03 03:51:20 by hyeonsok          #+#    #+#             */
+/*   Updated: 2021/11/04 18:40:09 by hyeonsok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	char	*s;
-	char	*p;
-
-	s = (char *)malloc(sizeof(char) * (ft_strlen(s1) + 1));
-	if (s == 0)
-		return (NULL);
-	p = s;
-	while (*s1 != '\0')
-		*p++ = *s1++;
-	*p = '\0';
-	return (s);
+	del(lst->content);
+	free(lst);
 }

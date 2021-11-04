@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   ft_dclstinit.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyeonsok <hyeonsok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/03 04:36:59 by hyeonsok          #+#    #+#             */
-/*   Updated: 2021/01/03 18:25:32 by hyeonsok         ###   ########.fr       */
+/*   Created: 2021/05/31 16:13:14 by hyeonsok          #+#    #+#             */
+/*   Updated: 2021/06/04 17:43:45 by hyeonsok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstiter(t_list *lst, void (*f)(void *))
+t_dclst	*ft_dclstinit(void)
 {
-	if (lst == NULL || f == NULL)
-		return ;
-	while (lst != NULL)
-	{
-		f(lst->content);
-		lst = lst->next;
-	}
+	t_dclst	*lst;
+
+	lst = (t_dclst *)malloc(sizeof(t_dclst));
+	if (!lst)
+		return (NULL);
+	lst->head = ft_nodenew(0);
+	lst->head->next = lst->head;
+	lst->head->prev = lst->head;
+	lst->count = 0;
+	return (lst);
 }

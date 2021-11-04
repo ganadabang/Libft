@@ -1,30 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hyeonsok <hyeonsok@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hyeonsok <hyeonsok@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/03 03:12:15 by hyeonsok          #+#    #+#             */
-/*   Updated: 2021/01/03 18:51:54 by hyeonsok         ###   ########.fr       */
+/*   Created: 2021/01/02 21:37:15 by hyeonsok          #+#    #+#             */
+/*   Updated: 2021/11/04 19:02:31 by hyeonsok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void*))
+int	ft_putendl_fd(char *s, int fd)
 {
-	t_list	*curr;
-	t_list	*next;
-
-	if (lst == NULL || del == NULL)
-		return ;
-	curr = *lst;
-	while (curr != NULL)
-	{
-		next = curr->next;
-		ft_lstdelone(curr, del);
-		curr = next;
-	}
-	*lst = NULL;
+	return (ft_putstr_fd(s, fd) + ft_putchar_fd('\n', fd));
 }

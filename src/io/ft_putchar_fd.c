@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyeonsok <hyeonsok@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/03 02:24:27 by hyeonsok          #+#    #+#             */
-/*   Updated: 2021/07/26 01:28:12 by hyeonsok         ###   ########seoul.kr  */
+/*   Created: 2021/01/02 21:22:31 by hyeonsok          #+#    #+#             */
+/*   Updated: 2021/11/04 18:35:40 by hyeonsok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_lstsize(t_list *lst)
+int	ft_putchar_fd(char c, int fd)
 {
-	int		size;
-
-	if (lst == NULL)
-		return (0);
-	size = 1;
-	while (lst->next != NULL)
-	{
-		size++;
-		lst = lst->next;
-	}
-	return (size);
+	return (write(fd, &c, 1));
 }
