@@ -1,41 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_slist_map.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyeonsok <hyeonsok@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/03 04:40:37 by hyeonsok          #+#    #+#             */
-/*   Updated: 2021/11/04 19:45:46 by hyeonsok         ###   ########.fr       */
+/*   Updated: 2021/11/04 23:52:44 by hyeonsok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+t_slist	*ft_slist_map(t_slist *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*new;
-	t_list	*ret;
-	t_list	*tmp;
+	t_slist	*new;
+	t_slist	*iter;
+	int		size;
 
-	if (lst == NULL || f == NULL)
-		return (NULL);
-	ret = ft_lstnew(f(lst->content));
-	if (!ret)
-		return (NULL);
-	tmp = ret;
-	lst = lst->next;
-	while (lst != NULL)
+	size = ft_slist_size(lst);
+	new = ft_slist_new(f(lst->content));
+	iter = new;
+	while (size--  > 0)
 	{
-		new = ft_lstnew(f(lst->content));
-		if (!new)
+		if (iter == NULL)
 		{
-			ft_lstclear(&ret, del);
+			ft_slist_clear(&new, del);
 			return (NULL);
 		}
-		tmp->next = new;
-		tmp = new;
 		lst = lst->next;
+		iter->next = ft_slist_new(f(lst->content));
+		iter = iter->next;
 	}
-	return (ret);
+	ft_slist_iter(new, f);
+	return (new);
 }

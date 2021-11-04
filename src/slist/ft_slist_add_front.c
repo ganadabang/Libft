@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_slist_add_front.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyeonsok <hyeonsok@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/03 03:00:47 by hyeonsok          #+#    #+#             */
-/*   Updated: 2021/11/04 19:32:03 by hyeonsok         ###   ########.fr       */
+/*   Created: 2021/01/03 01:30:26 by hyeonsok          #+#    #+#             */
+/*   Updated: 2021/11/04 23:37:51 by hyeonsok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_slist_add_front(t_slist **lst, t_slist *new)
 {
-	if (lst == NULL || new == NULL)
-		return ;
 	if (*lst == NULL)
+	{
 		*lst = new;
-	else
-		ft_lstlast(*lst)->next = new;
+		return ;
+	}
+	new->next = (*lst);
+	*lst = new;
 }
