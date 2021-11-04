@@ -6,14 +6,18 @@
 /*   By: hyeonsok <hyeonsok@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/23 10:18:35 by hyeonsok          #+#    #+#             */
-/*   Updated: 2021/11/04 04:07:07 by hyeonsok         ###   ########.fr       */
+/*   Updated: 2021/11/05 00:39:05 by hyeonsok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_string.h"
 
 void	ft_bzero(void *s, size_t n)
 {
-	while (n-- > 0)
-		*(unsigned char *)s++ = 0;
+	while (n > 0)
+	{
+		*(unsigned char *)s = 0;
+		++s;
+		--n;
+	}
 }

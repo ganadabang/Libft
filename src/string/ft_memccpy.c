@@ -3,25 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hyeonsok <hyeonsok@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hyeonsok <hyeonsok@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/24 17:27:07 by SSONG             #+#    #+#             */
-/*   Updated: 2021/01/03 20:19:59 by hyeonsok         ###   ########.fr       */
+/*   Updated: 2021/11/05 00:39:15 by hyeonsok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_string.h"
 
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	if (!dst && !src)
-		return (NULL);
-	while (n)
+	while (n > 0 && *(unsigned char *)src != (unsigned char)c)
 	{
-		*(unsigned char *)dst = *(unsigned char *)src++;
-		if (*(unsigned char *)dst++ == (unsigned char)c)
-			return (dst);
-		n--;
+		*(unsigned char *)dst = *(unsigned char *)src;
+		++src;
+		++dst;
+		--n;
 	}
-	return (NULL);
+	if (n < 0)
+	{
+		return (NULL);
+	}
+	return (dst);
 }
