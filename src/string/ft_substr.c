@@ -6,27 +6,32 @@
 /*   By: hyeonsok <hyeonsok@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/29 17:30:56 by hyeonsok          #+#    #+#             */
-/*   Updated: 2021/11/04 04:35:41 by hyeonsok         ###   ########.fr       */
+/*   Updated: 2021/11/05 02:00:10 by hyeonsok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "libft.h"
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
+#include "ft_string.h"
 
+/*
+ * TODO: TEST
+ */
 char	*ft_substr(char const *s1, unsigned int start, size_t len)
 {
-	char	*sub;
-	char	*p;
+	char	*s;
+	char	*iter;
 
-	sub = (char *)malloc(sizeof(char) * (len + 1));
-	if (sub == NULL)
+	s = (char *)malloc((len + 1) * sizeof(char));
+	if (s == NULL)
 		return (NULL);
 	s1 += start;
-	p = sub;
-	while (len-- > 0)
-		*p++ = *s1++;
-	*p = '\0';
-	return (sub);
+	iter = s;
+	while (len > 0)
+	{
+		*iter = *s1;
+		++iter;
+		++s1;
+		--len;
+	}
+	*iter = '\0';
+	return (s);
 }

@@ -6,20 +6,37 @@
 /*   By: hyeonsok <hyeonsok@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/25 14:51:45 by SSONG             #+#    #+#             */
-/*   Updated: 2021/11/04 19:11:44 by hyeonsok         ###   ########.fr       */
+/*   Updated: 2021/11/05 02:58:47 by hyeonsok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <string.h>
-#include <stdio.h>
+#include "ft_string.h"
 
-char	*ft_strnstr(const char *big, const char *little, size_t len)
+/*
+ * TODO: TEST
+ */
+char	*ft_strnstr(const char *str, const char *substr, size_t len)
 {
+	char	*iter;
 	char	*s;
-	char	*comp;
+	size_t	sublen;
 	
-	if (!*little && len != 0)
-		return ((char *)big);
-	if (len )
+	sublen = ft_strlen(substr);
+	len -= sublen;
+	while (len > 0)
+	{
+		s = ft_strchr(str, *substr);
+		len -= s - str;
+		if (s == NULL || len < 0)
+		{
+			return (NULL);
+		}
+		if (ft_strncmp(s, substr, sublen) == 0)
+		{
+			return (s);
+		}
+		str = s + 1;
+		--len;
+	}
+	return (NULL);
 }

@@ -6,7 +6,7 @@
 /*   By: hyeonsok <hyeonsok@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 21:18:39 by hyeonsok          #+#    #+#             */
-/*   Updated: 2021/11/04 22:20:06 by hyeonsok         ###   ########.fr       */
+/*   Updated: 2021/11/04 23:55:34 by hyeonsok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,9 @@ char			*ft_strchr(const char *s, int c);
 char			*ft_strrchr(const char *s, int c);
 char			*ft_strnstr(const char *haystack, const char *needle, \
 				size_t len);
-				
+int				ft_strncmp(const char *s1, const char *s2, size_t n);
+int				ft_atoi(const char *str);
+void			*ft_calloc(size_t count, size_t size);
+char			*ft_strdup(const char *s1);
+
 #endif  //!__FT_STRING__H__
