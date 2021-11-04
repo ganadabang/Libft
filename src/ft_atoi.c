@@ -6,7 +6,7 @@
 /*   By: hyeonsok <hyeonsok@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/25 16:16:40 by SSONG             #+#    #+#             */
-/*   Updated: 2021/11/04 19:26:10 by hyeonsok         ###   ########.fr       */
+/*   Updated: 2021/11/05 04:06:41 by hyeonsok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,5 @@ int	ft_atoi(const char *str)
 		val = val * 10 + *str - '0';
 		++str;
 	}
-	if (val >= 9223372036854775807 && sign == 1)
-		return (-1);
-	if (val > 9223372036854775807 && sign == -1)
-		return (0);
 	return (sign * val);
 }
