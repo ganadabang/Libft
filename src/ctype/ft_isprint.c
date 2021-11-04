@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ischrs.c                                        :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyeonsok <hyeonsok@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/04 03:25:29 by hyeonsok          #+#    #+#             */
-/*   Updated: 2021/11/04 03:25:32 by hyeonsok         ###   ########.fr       */
+/*   Created: 2020/12/25 17:22:44 by SSONG             #+#    #+#             */
+/*   Updated: 2021/11/04 22:01:13 by hyeonsok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_ischrs(int c, char *chrs)
+int	ft_isprint(int c)
 {
-	return (ft_strchr(chrs, c) != NULL);
+	return ((unsigned char)c >= 0x20 && (unsigned char)c <= 0x7e);
 }

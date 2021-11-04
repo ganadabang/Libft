@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_ispunct.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyeonsok <hyeonsok@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/25 17:25:26 by SSONG             #+#    #+#             */
-/*   Updated: 2021/11/04 01:13:53 by hyeonsok         ###   ########.fr       */
+/*   Created: 2021/11/04 21:31:55 by hyeonsok          #+#    #+#             */
+/*   Updated: 2021/11/04 22:01:39 by hyeonsok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_ctype.h"
 
-int	ft_toupper(int c)
+int	ft_ispunct(int c)
 {
-	if (c >= 'a' && c <= 'z')
-		return (c + 32);
-	return (c);
+	return (((unsigned char)c >= 0x21 && (unsigned char)c <= 0x2f) 
+			|| ((unsigned char)c >= 0x3a && (unsigned char)c <= 0x40)
+			|| ((unsigned char)c >= 0x5b && (unsigned char)c <= 0x60) 
+			|| ((unsigned char)c >= 0x7b && (unsigned char)c <= 0x7e));
 }

@@ -1,18 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_islower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyeonsok <hyeonsok@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/25 17:11:07 by SSONG             #+#    #+#             */
-/*   Updated: 2021/11/04 02:01:58 by hyeonsok         ###   ########.fr       */
+/*   Created: 2021/11/04 19:59:59 by hyeonsok          #+#    #+#             */
+/*   Updated: 2021/11/04 22:08:51 by hyeonsok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int	ft_isdigit(int c)
+ft_islower(int c)
 {
-	return (c >= '0' && c <= '9');
+	return ((unsigned char)c >= 0x61 && (unsigned char)c <= 0x7a);
 }

@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyeonsok <hyeonsok@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/25 16:57:45 by SSONG             #+#    #+#             */
-/*   Updated: 2021/11/04 02:02:18 by hyeonsok         ###   ########.fr       */
+/*   Created: 2020/12/25 17:11:07 by SSONG             #+#    #+#             */
+/*   Updated: 2021/11/04 21:59:47 by hyeonsok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+int	ft_isdigit(int c)
 {
-	return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
+	return ((unsigned char)c >= 0x30 && (unsigned char)c <= 0x39);
 }

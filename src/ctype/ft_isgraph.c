@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_isgraph.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyeonsok <hyeonsok@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/25 17:22:44 by SSONG             #+#    #+#             */
-/*   Updated: 2021/11/04 02:03:28 by hyeonsok         ###   ########.fr       */
+/*   Created: 2021/11/04 19:56:02 by hyeonsok          #+#    #+#             */
+/*   Updated: 2021/11/04 22:00:01 by hyeonsok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_ctype.h"
 
-int	ft_isprint(int c)
+int	ft_isgraph(int c)
 {
-	return (c >= 32 && c <= 126);
+	return ((unsigned char)c >= 33 && (unsigned char)c <= 126);
 }

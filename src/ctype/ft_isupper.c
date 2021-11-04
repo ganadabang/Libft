@@ -1,16 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isblank.c                                       :+:      :+:    :+:   */
+/*   ft_isupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyeonsok <hyeonsok@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/04 19:54:17 by hyeonsok          #+#    #+#             */
-/*   Updated: 2021/11/04 19:55:25 by hyeonsok         ###   ########.fr       */
+/*   Created: 2021/11/04 21:40:54 by hyeonsok          #+#    #+#             */
+/*   Updated: 2021/11/04 22:04:07 by hyeonsok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isblank(int c)
+#include "ft_ctype.h"
+
+int	ft_isupper(int c)
 {
-	return (c == ' ' || c == '\t');
+	return ((unsigned char)c >= 0x41 && (unsigned char)c <= 0x5a);
 }
